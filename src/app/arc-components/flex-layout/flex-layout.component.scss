@@ -6,6 +6,17 @@
   //height:calc(100% - 0);
 }
 
+.mat-button {
+  display: flex;
+  align-content: center;
+  background-color: blue;
+  color: white;
+  height:2rem;
+  padding:0;
+  margin:0;
+  font-size: .75rem;
+}
+
 .arc-main-div {
   //padding:.5rem;
   //border:5px solid red;
