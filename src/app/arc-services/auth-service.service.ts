@@ -28,7 +28,7 @@ export class AuthServiceService {
   }
 
   public login(userCreds: Credential) {
-    let url: string = `${this.BASE_URL}/users/authenticate`;
+    const url = `${this.BASE_URL}/users/authenticate`;
     return this.http.post(url, userCreds,
       { responseType: 'text' }
     ).subscribe(tokenResult => {
