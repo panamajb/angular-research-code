@@ -36,6 +36,7 @@ export class AuthService {
       localStorage.setItem('token', tokenResult);
       this.user = new User();
       this.user.username = userCreds.username;
+      this.openSnackBar('GOT:   '+tokenResult,userCreds.username);
       //this.router.navigate(['issues']);
       },
       error => {
@@ -60,7 +61,7 @@ export class AuthService {
       headers: new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`
       )}
     ).subscribe(resource => {
-        console.log("RESOURCE FOUND:   "+resource);
+        this.openSnackBar('GOT:   '+resource,null);
       },
       error => {
         this.openSnackBar(error.status+'   '+ error.message,null);
@@ -72,7 +73,7 @@ export class AuthService {
 
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action, {
-      duration: 5000,
+      duration: 5000
     });
   }
 
